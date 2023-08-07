@@ -1,2 +1,2 @@
 # ohmyfood-integration
-P2 - Ohmyfood integration web et animations scss
+P3 - Ohmyfood integration web et animations scss
