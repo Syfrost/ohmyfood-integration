@@ -1,0 +1,12 @@
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/placeholders";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $background-principal;
+}
