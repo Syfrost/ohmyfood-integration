@@ -2,10 +2,19 @@
 @import "utils/mixins";
 @import "utils/placeholders";
 
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/footer";
+
+@import "pages/home";
+@import "pages/pruduct-list";
+
+@import "components/buttons";
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 body {
     background-color: $background-principal;
