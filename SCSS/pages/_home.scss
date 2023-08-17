@@ -26,9 +26,14 @@
     padding-bottom:27px ;
   }
 }
+
 .tutorial {
   padding-top: 48px;
   padding-bottom: 68px;
+  @media (min-width: 1024px) {
+    padding-right: 12.5%;
+    padding-left: 12.5%;
+  }
   &__title {
     margin-top: 0;
   }
@@ -96,3 +101,64 @@
     color: #7e7e7e;
   }
 }
+
+.restaurant {
+  background: $background-secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media (min-width:1024px) {
+    &__title {
+      width: 100%;
+    }
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 12.5%;
+    padding-left: 12.5%;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 251px;
+  width: auto;
+  margin: 17px;
+  position: relative;
+
+  @media (min-width:1024px) {
+    flex: 1 0 calc(50% - 34px);
+  }
+  a {
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    img {
+      border-radius: 15px 15px 0 0;
+      object-fit: cover;
+      background-repeat: no-repeat;
+      height: 170px;
+      width: 100%;
+    }
+  }
+  a:visited {
+    color: initial;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding-left: 15px;
+  }
+  &__txt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
