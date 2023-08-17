@@ -3,8 +3,8 @@ $background-principal: #FFFFFF;
 $background-secondary: #F6F6F6;
 
 //Button colors
-$gradient-btn: linear-gradient(175deg, #9356DC 0%, #FF79DA 100%);
-$gradient-btn-like: linear-gradient(175deg, #FF79DA 0%, #9356DC 100%);
+$gradient-btn-like: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+$gradient-btn: linear-gradient(180deg, #FF79DA 0%, #9356DC 100%);
 
 //Primary colors
 $theme-color: #9356DC;
@@ -14,5 +14,5 @@ $theme-color-green-dusky: #008766;
 
 //header colors
 $background-header-grey-light: #EAEAEA;
-//Footer colors
-$background-footer-grey-light: #353535
+//Footer & text colors
+$background-grey-light: #353535
