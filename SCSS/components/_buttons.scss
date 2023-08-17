@@ -14,3 +14,48 @@
   font-weight: 500;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
 }
+
+//Animation et placement du bouton like sur les cards
+.like-checkbox {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 25px;
+  margin-bottom: 33px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  .checkbox-input {
+    display: none;
+
+    &:checked + svg path {
+      fill: url(#paint0_linear_89330_77);
+      opacity: 1;
+      transition: fill 0.5s ease-in-out, stroke 0.5s ease-in-out;
+      stroke: transparent;
+    }
+
+    &:checked + svg {
+      animation: fillAppear 1s ease-in-out;
+    }
+
+    + svg path {
+      fill: none;
+      stroke: black;
+      stroke-width: 1px;
+      transition: fill 0.5s ease-in-out, stroke 0.5s ease-in-out;
+    }
+  }
+
+  @keyframes fillAppear {
+    0% {
+      fill: none;
+      opacity: 0;
+    }
+    100% {
+      fill: url(#paint0_linear_89330_77);
+      opacity: 1;
+    }
+  }
+}
