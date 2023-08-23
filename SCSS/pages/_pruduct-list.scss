@@ -1,0 +1,167 @@
+.restaurantPicture {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+  margin-bottom: -35px;
+}
+
+//Positionnement du header panier
+.menuBasket__header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menuBasket__header h1 {
+  @media (max-width: 500px) {
+    font-size: min(28px, calc(17px + 1.4vw));
+  }
+}
+
+.menuBasket__header .like-checkbox {
+  position: unset;
+  margin-top: 28px;
+  margin-left: 15px;
+  margin-right: 40px;
+  @media (max-width: 500px) {
+    margin-right: 20px;
+  }
+}
+
+//Positionnement des "card" du panier
+.menuBasket {
+  background: $background-secondary;
+  border-radius: 35px 35px 0 0 ;
+  position: relative;
+  height: 100%;
+  padding: 15px;
+
+  &__title {
+    display: block;
+    font-family: Shrikhand, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    padding-top: 32px;
+    line-height: 20px;
+  }
+
+  &__type {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__title {
+      font-family: Roboto, sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      padding-top: 40px;
+
+      &::after { //Ajout de la barre de séparation sous les titres
+        content: "";
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: #99E2D0;
+        position: absolute;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  &__item {
+    background: white;
+    padding: 15px 0 15px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.10);
+    overflow: hidden;
+
+    &__information {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &__text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+
+    &__name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__subname {
+      font-size: 0.95rem;
+      font-weight: 300;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__price {
+      display: flex;
+      height: auto;
+      margin: -6px 0 -6px 5px;
+      padding: 6px 0 6px 0;
+      flex-direction: column-reverse;
+      font-weight: 700;
+      color: $background-grey-light;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+
+  &__confirmation {
+    background: $theme-color-green-light;
+    margin: -15px -59px -15px 15px;
+    max-width: 59px;
+    min-width: 59px;
+    @extend %flex-center;
+    transition: all 0.3s ease-in-out;
+    i {
+      line-height: 20px;
+      display: flex;
+      background: white;
+      color: $theme-color-green-light;
+      border-radius: 50%;
+      width: 19px;
+      padding-left: 1px;
+      height: 19px;
+    }
+  }
+
+  @include animate-elements(0.2s, 10); //Animation des éléments du panier (voir mixin)
+}
+
+//Ajout d'un pseudo élément pour faire le dégradé sur le texte écrasé par le prix
+.menuBasket__item__price::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  transform: translateX(-20px);
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  z-index: 2;
+}
+
+//Animation items panier
+.menuBasket__item:hover {
+  .menuBasket__confirmation {
+    margin-right: 0;
+  }
+}
+
+
+
