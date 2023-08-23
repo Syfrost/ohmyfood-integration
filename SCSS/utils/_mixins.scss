@@ -1,1 +1,20 @@
-@import "./variables";
+//Apparition des éléments
+@mixin animate-elements($delay, $numElements) {
+  @for $i from 1 through $numElements {
+    .delay--#{$i} {
+      animation: fade-in $delay * $i ease-in-out;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+//Fin de l'apparition des éléments
