@@ -188,5 +188,32 @@
     flex-direction: column;
     gap: 5px;
   }
+
+  &__new::before {
+    content: "Nouveau";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 29px;
+    border-radius: 2px;
+    background-color: $theme-color-green-light;
+    color: $theme-color-green-dusky;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 13px 18px 0 0;
+    text-align: center;
+    line-height: 29px;
+    font-family: Roboto, sans-serif;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  }
 }
 
+.card {
+  .like-checkbox {
+    right: 0;
+    bottom: 0;
+    margin-right: 25px;
+    margin-bottom: 33px;
+  }
+}
