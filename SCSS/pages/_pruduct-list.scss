@@ -12,6 +12,9 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  @media (min-width: 1024px) {
+    justify-content: center;
+  }
 }
 
 .menuBasket__header h1 {
@@ -28,15 +31,30 @@
   @media (max-width: 500px) {
     margin-right: 20px;
   }
+  @media (min-width: 1024px) {
+    margin-right: 0;
+  }
 }
-
+.basket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 //Positionnement des "card" du panier
 .menuBasket {
   background: $background-secondary;
   border-radius: 35px 35px 0 0 ;
   position: relative;
   height: 100%;
+  width: 100%;
   padding: 15px;
+  max-width: 1055px; //taille max d'écran 1440px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 
   &__title {
     display: block;
@@ -51,6 +69,12 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+      max-width: 634px;
+      //taille max d'écran 1440px
+    }
 
     &__title {
       font-family: Roboto, sans-serif;
@@ -111,7 +135,7 @@
       display: flex;
       height: auto;
       margin: -6px 0 -6px 5px;
-      padding: 6px 0 6px 0;
+      padding: 6px 15px 6px 0;
       flex-direction: column-reverse;
       font-weight: 700;
       color: $background-grey-light;
@@ -123,10 +147,11 @@
 
   &__confirmation {
     background: $theme-color-green-light;
-    margin: -15px -59px -15px 15px;
+    margin: -15px -59px -15px 0;
     max-width: 59px;
     min-width: 59px;
     @extend %flex-center;
+    animation: delay-animation 0.3s forwards; //Prévient de la transition au chargement de la page
     transition: all 0.3s ease-in-out;
     i {
       line-height: 20px;
@@ -160,6 +185,25 @@
 .menuBasket__item:hover {
   .menuBasket__confirmation {
     margin-right: 0;
+  }
+}
+
+//Placement et size du bouton de validation du panier
+.button__validation {
+  padding: 40px 0 25px 0;
+  @extend %flex-center;
+}
+.button-cmd {
+  width: 186px;
+  height: 50px;
+}
+
+@keyframes delay-animation {
+  0% {
+    display: none;
+  }
+  100% {
+    display: flex;
   }
 }
 
